@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Arvo:wght@400;700&family=EB+Garamond:wght@400;500;600;700;800&family=Inclusive+Sans&family=Merriweather:wght@300;400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700;800&family=Inclusive+Sans&family=Merriweather:wght@300;400;700;900&display=swap');
+
+:root {
+    --background: #273043;
+    --text: #EFF6EE;
+    --emphasis: #F02D3A;
+    --contrast: #9197AE;
+}
+
+body {
+    font-family: Arvo;
+    background-color: var(--background);
+    color: var(--contrast);
+    margin: 0px;
+}
+
+.heading {
+    font-family: Merriweather;
+    color: var(--text);
+}
