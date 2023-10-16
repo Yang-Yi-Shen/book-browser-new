@@ -26,10 +26,6 @@ async function fetch() {
     loading.value = false
 }
 
-function search() {
-    router.push(`/search/${query.value}`)
-}
-
 onMounted(fetch)
 </script>
 
