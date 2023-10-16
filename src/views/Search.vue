@@ -40,7 +40,7 @@ onMounted(fetch)
         </h2>
         <form class="search-form" @submit.prevent="search">
             <input type="text" class="searchbar" v-model="query">
-            <button type="submit" class="search-btn">
+            <button @click="fetch" type="submit" class="search-btn">
                 <img class="search-btn-icon" src="/src/assets/search_icon.png">
             </button>
             <input type="submit" hidden>
@@ -87,6 +87,11 @@ header {
     flex-shrink: 0;
     border: none;
     border-radius: 0 5px 5px 0;
+    background-color: var(--contrast);
+}
+
+.search-btn:active {
+    background-color: #83889d;
 }
 
 .search-btn-icon {
