@@ -16,7 +16,7 @@ defineProps({
         <a class="link" :href="`https://${bookstore}.com${url}`">
             <p class="title">{{ title }}</p>
         </a>
-        <p class="price">{{ price }}</p>
+        <p class="price">${{ price.replace('$', '') }}</p>
         <p class="format">{{ format }}</p>
         <p class="author">{{ author }}</p>
         <p class="bookstore">{{ bookstore }}</p>
