@@ -13,7 +13,7 @@ defineProps({
 <template>
     <div class="book">
         <img class="cover" :src="image">
-        <a class="link" :href="`https://${bookstore}.com${url}`">
+        <a class="link" :href="`https://${bookstore}.com${url}`" target="_blank">
             <p class="title heading">{{ title }}</p>
         </a>
         <p class="price">${{ price.replace('$', '') }}</p>
