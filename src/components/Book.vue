@@ -31,5 +31,9 @@ defineProps({
 
 .cover {
     width: 100%;
+    flex-basis: 1;
+    aspect-ratio: 2 / 3;
+    object-fit: scale-down;
+    background-color: var(--contrast)
 }
 </style>
