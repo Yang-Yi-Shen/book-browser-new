@@ -14,7 +14,7 @@ defineProps({
     <div class="book">
         <img class="cover" :src="image">
         <a class="link" :href="`https://${bookstore}.com${url}`">
-            <p class="title">{{ title }}</p>
+            <p class="title heading">{{ title }}</p>
         </a>
         <p class="price">${{ price.replace('$', '') }}</p>
         <p class="format">{{ format }}</p>
@@ -35,5 +35,17 @@ defineProps({
     aspect-ratio: 2 / 3;
     object-fit: scale-down;
     background-color: var(--contrast)
+}
+
+.link {
+    text-decoration: none;
+}
+
+.title {
+    color: var(--background);
+}
+
+.title:hover {
+    color: var(--emphasis);
 }
 </style>
