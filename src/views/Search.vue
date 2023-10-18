@@ -200,10 +200,9 @@ main {
 }
 
 .search-results {
-    display: flex;
-    flex-wrap: wrap;
-    gap: max(20px, 0.5%);
+    display: grid;
+    grid-template-columns: repeat(auto-fill, max(15%, min(100px, 28%)));
+    grid-gap: max(20px, 0.5%);
     justify-content: space-between;
-    text-align-last: left;
 }
 </style>
