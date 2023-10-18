@@ -69,6 +69,7 @@ header::before {
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    margin: 0px 50px;
 }
 
 .home-title {
@@ -80,7 +81,7 @@ header::before {
 }
 
 .home-searchbar {
-    width: 600px;
+    width: min(600px, calc(100vw - 120px));
     padding: 10px;
     border-radius: 5px;
     border: none;
@@ -107,5 +108,12 @@ main .heading {
 footer {
     padding-bottom: 30px;
     text-align: center;
+}
+
+@media (max-width: 768px) {
+    main {
+        padding: 30px;
+        margin: 0px 50px 50px;
+    }
 }
 </style>
