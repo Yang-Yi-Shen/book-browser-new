@@ -108,6 +108,7 @@ header {
     display: flex;
     align-items: center;
     padding: 0px 50px;
+    gap: 20px;
 }
 
 .logo-link {
@@ -122,7 +123,7 @@ header {
 }
 
 .searchbar {
-    width: 560px;
+    width: min(560px, 100%);
     padding: 10px;
     border-radius: 5px;
     border: none;
@@ -150,15 +151,16 @@ header {
 
 main {
     margin: 50px;
-    padding: 50px;
     background-color: var(--text);
 }
 
+.loading-text {
+    padding: 50px 0px 0px 50px;
+}
+
 .bestdeal {
-    max-height: 350px;
     background-color: var(--contrast);
     padding: 30px;
-    margin-bottom: 50px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -171,7 +173,7 @@ main {
 
 .bestdeal-book {
     display: flex;
-    gap: 50px;
+    gap: 30px;
     max-width: 100%;
     color: var(--background);
 }
@@ -190,9 +192,21 @@ main {
 
 .bestdeal-cover {
     max-width: 50%;
+    width: 250px;
+    max-height: 350px;
     aspect-ratio: 2 / 3;
     object-fit: scale-down;
     background-color: var(--contrast)
+}
+
+.bestdeal-content {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.bestdeal-content * {
+    margin: 0px;
 }
 
 .bestdeal-link {
@@ -204,5 +218,30 @@ main {
     grid-template-columns: repeat(auto-fill, max(15%, min(100px, 28%)));
     grid-gap: max(20px, 0.5%);
     justify-content: space-between;
+    padding: 50px;
+}
+
+@media (max-width: 480px) {
+    .loading-text {
+        padding: 30px 0px 0px 30px;
+    }
+
+    .bestdeal-book {
+        flex-direction: column;
+        gap: 20px;
+        width: 100%;
+        color: var(--background);
+    }
+
+    .bestdeal-cover {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .search-results {
+        grid-template-columns: repeat(auto-fill, 45%);
+        padding: 30px;
+        overflow-y:initial
+    }
 }
 </style>
