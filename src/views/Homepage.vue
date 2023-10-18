@@ -6,7 +6,9 @@ const query = ref()
 const router = useRouter()
 
 function search() {
-    router.push(`/search/${query.value}`)
+    if (query.value) {
+        router.push(`/search/${query.value}`)
+    }
 }
 </script>
 
@@ -18,9 +20,11 @@ function search() {
         <div class="home-content">
             <h1 class="home-title heading">Buy books from across all platforms in one tab!</h1>
             <p class="home-subtitle">Search for books from multiple sites at once with Book Browser</p>
-            <form @submit.prevent="search()">
+            <form class="search-form" @submit.prevent="search()">
                 <input v-model="query" class="home-searchbar" placeholder="Find your next purchase...">
-                <input type="submit" hidden>
+                <button type="submit" class="search-btn">
+                    <img class="search-btn-icon" src="/src/assets/search_icon.png">
+                </button>
             </form>
         </div>
     </header>
@@ -80,13 +84,35 @@ header::before {
     margin-bottom: 30px;
 }
 
+.search-form {
+    display: flex;
+    align-items: center;
+}
+
 .home-searchbar {
     width: min(600px, calc(100vw - 120px));
     padding: 10px;
-    border-radius: 5px;
+    border-radius: 5px 0px 0px 5px;
     border: none;
     font-size: 16px;
     font-family: Arvo;
+}
+
+.search-btn {
+    height: 40px;
+    width: 40px;
+    flex-shrink: 0;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    background-color: var(--contrast);
+}
+
+.search-btn:active {
+    background-color: #83889d;
+}
+
+.search-btn-icon {
+    height: 20px;
 }
 
 main {
