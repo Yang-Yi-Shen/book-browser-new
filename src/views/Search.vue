@@ -82,67 +82,128 @@
     <main>
         <h2 class="loading-text" v-if="loading">Loading...</h2>
         <div v-if="bestDeal" class="bestdeal">
-            <h1 class="bestdeal-title">Best deal found:</h1>
-            <Book :image="bestDeal.image" :title="bestDeal.title" :url="bestDeal.url" :price="bestDeal.price"
-                :format="bestDeal.format" :author="bestDeal.author" :bookstore="bestDeal.bookstore" />
+            <h2 class="bestdeal-heading heading">Best deal found:</h2>
+            <div class="bestdeal-book">
+                <img class="bestdeal-cover" :src="bestDeal.image">
+                <div class="bestdeal-content">
+                    <a class="bestdeal-link" :href="`https://${bestDeal.bookstore}.com${bestDeal.url}`" target="_blank">
+                        <h3 class="bestdeal-title">{{ bestDeal.title }}</h3>
+                    </a>
+                    <p class="bestdeal-price">${{ bestDeal.price.replace('$', '') }}</p>
+                    <p class="bestdeal-format">{{ bestDeal.format }}</p>
+                    <p class="bestdeal-author">{{ bestDeal.author }}</p>
+                    <p class="bestdeal-bookstore">{{ bestDeal.bookstore }}</p>
+                </div>
+            </div>
         </div>
-        <Book v-for="book in results" :image="book.image" :title="book.title" :url="book.url" :price="book.price"
+        <div class="search-results">
+            <Book v-for="book in results" :image="book.image" :title="book.title" :url="book.url" :price="book.price"
             :format="book.format" :author="book.author" :bookstore="book.bookstore" />
+        </div>
     </main>
 </template>
 
 <style scoped>
-    header {
-        display: flex;
-        align-items: center;
-        padding: 0px 50px;
-    }
+header {
+    display: flex;
+    align-items: center;
+    padding: 0px 50px;
+}
 
-    .logo-link {
-        text-decoration: none;
-    }
+.logo-link {
+    text-decoration: none;
+}
 
-    .search-form {
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
+.search-form {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
-    .searchbar {
-        width: 560px;
-        padding: 10px;
-        border-radius: 5px;
-        border: none;
-        font-size: 16px;
-        font-family: Arvo;
-        border-radius: 5px 0 0 5px;
-    }
+.searchbar {
+    width: 560px;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    font-size: 16px;
+    font-family: Arvo;
+    border-radius: 5px 0 0 5px;
+}
 
-    .search-btn {
-        height: 40px;
-        width: 40px;
-        flex-shrink: 0;
-        border: none;
-        border-radius: 0 5px 5px 0;
-        background-color: var(--contrast);
-    }
+.search-btn {
+    height: 40px;
+    width: 40px;
+    flex-shrink: 0;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    background-color: var(--contrast);
+}
 
-    .search-btn:active {
-        background-color: #83889d;
-    }
+.search-btn:active {
+    background-color: #83889d;
+}
 
-    .search-btn-icon {
-        height: 20px;
-    }
+.search-btn-icon {
+    height: 20px;
+}
 
-    main {
-        margin: 50px;
-        padding: 50px;
-        background-color: var(--text);
-        display: flex;
-        flex-wrap: wrap;
-        gap: max(20px, 0.5%);
-        justify-content: space-between;
-    }
+main {
+    margin: 50px;
+    padding: 50px;
+    background-color: var(--text);
+}
+
+.bestdeal {
+    max-height: 350px;
+    background-color: var(--contrast);
+    padding: 30px;
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.bestdeal-heading {
+    color: var(--background);
+    margin: 0px 0px 20px;
+}
+
+.bestdeal-book {
+    display: flex;
+    gap: 50px;
+    max-width: 100%;
+    color: var(--background);
+}
+
+.bestdeal-link {
+    color: var(--background);
+}
+
+.bestdeal-title {
+    margin: 0px 0px 20px;
+}
+
+.bestdeal-title:hover {
+    color: var(--emphasis);
+}
+
+.bestdeal-cover {
+    max-width: 50%;
+    aspect-ratio: 2 / 3;
+    object-fit: scale-down;
+    background-color: var(--contrast)
+}
+
+.bestdeal-link {
+    text-decoration: none;
+}
+
+.search-results {
+    display: flex;
+    flex-wrap: wrap;
+    gap: max(20px, 0.5%);
+    justify-content: space-between;
+    text-align-last: left;
+}
 </style>
