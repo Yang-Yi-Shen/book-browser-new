@@ -150,7 +150,7 @@ header {
 }
 
 main {
-    margin: 50px;
+    margin: 40px 50px 50px;
     background-color: var(--text);
 }
 
@@ -247,8 +247,9 @@ main {
     }
 
     .search-results {
-        grid-template-columns: repeat(auto-fill, 45%);
-        padding: 30px;
+        grid-template-columns: repeat(auto-fill, 45.8%);
+        padding: 20px;
+        grid-gap: 10px;
         overflow-y:initial
     }
 }
