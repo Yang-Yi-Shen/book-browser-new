@@ -222,6 +222,14 @@ main {
 }
 
 @media (max-width: 480px) {
+    header {
+        padding: 0px 30px;
+    }
+
+    main {
+        margin: 15px 30px 30px;
+    }
+
     .loading-text {
         padding: 30px 0px 0px 30px;
     }
