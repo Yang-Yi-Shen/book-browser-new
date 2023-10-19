@@ -90,7 +90,7 @@ header::before {
 }
 
 .home-searchbar {
-    width: min(600px, calc(100vw - 120px));
+    width: min(600px, calc(100vw - 160px));
     padding: 10px;
     border-radius: 5px 0px 0px 5px;
     border: none;
@@ -137,9 +137,31 @@ footer {
 }
 
 @media (max-width: 768px) {
+    .home-top {
+        padding: 0.1px 30px;
+    }
+
+    .home-content {
+        height: calc(100vh - 200px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        margin: 0px 30px;
+    }
+
+    .home-searchbar {
+        width: min(600px, calc(100vw - 120px));
+        padding: 10px;
+        border-radius: 5px 0px 0px 5px;
+        border: none;
+        font-size: 16px;
+        font-family: Arvo;
+    }
+
     main {
         padding: 30px;
-        margin: 0px 50px 50px;
+        margin: 0px 30px 50px;
     }
 }
 </style>
